@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="css/home.css">    
+        <script src="https://kit.fontawesome.com/f3fe8d587b.js"></script>   
+        
+    </head>
+    <body>
+        <h1>Todo list</h1>
+    
+<!-- Add Tasks Form-->
+    <div id="form" name="form1">
+        <hr>
+    <form action="addTasks" method="POST" >
+        <div id="description">
+        <label for="Description">Description</label><br><br>
+        <input type="text" name="description" id="desc" placeholder="What you want to do?" required>
+        </div>
+        <div class="selects">
+        <div class ="category">
+            <div class="heading">
+                category
+            </div>
+        <select name="category" id="">
+                <option value="default">Choose your category</option>
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+            <option value="family">Family</option>
+            <option value="medical">Medical</option>
+        </select>
+        </div>
+        <div id="todo-app">
+            <input type="date" name="date" id="date" required>
+        </div>
+
+        </div>
+        <div class="buttons">
+        <div class ="Tasks">
+        <button value="submit" id="add"><i class="fas fa-plus"></i> Add Tasks</button>
+        </div>
+        <div class ="Tasks" >
+                <button form="form2" id="delete" value="submit"><i class="fas fa-trash"></i>&nbspDelete Tasks</button>
+                </div>
+        </div>
+    </form>
+    </div>
+
+<!-- Deleting form-->
+    <form action="deleteTasks" id="form2" name="form2" method="POST">
+    <div id="availabe_tasks" ">
+            <ul>
+                <% for (let i of tasks){%>
+                    <li name="list" class="lsts">
+                        <div id="items">
+                            <input type="checkbox" name="<%= i.id %>" class="agreed" onchange='track(this);'>
+                        </div>
+                        <div id="todo-list">
+                            
+                            <div><p><%= i.description %></p><i class="far fa-calendar-times"></i>&nbsp;<%= i.date %></p></div>
+                            <div id="available_category" class="ctgs" style="width: 7rem"><p style="color: white" class="available_category_p"><%= i.category %></p></div>
+                        </div>
+                    </li>
+                <% } %>
+            
+            </ul>
+            
+    </div>
+    </form>
+
+    <script src="/js/checked.js"></script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,246 @@
+body{
+    width: 60%;
+    margin: auto;
+    border: 1px solid black;
+    z-index: 1;
+}
+/*STyle for heading TODO list*/
+h1{
+    text-align: center;
+    color:gray;
+}
+/*Height and width common for all forms*/
+#form{
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+}
+#form label{
+    margin-left: 5%;
+    font-size: 1.5rem;
+    color: gray;
+}
+#description{
+    height: 20%;
+    width: 100%;
+}
+/* Height and width of the description*/
+#desc{
+    margin-left: 5%;
+    font-size: 1.2rem;
+    color: lightgray;
+    width: 100%;
+    height: 3rem;
+    border: 0px solid;
+}
+/*---------------------------------------------------------------------------------------------------*/
+/*The section which displays the the category drop down list and the date*/
+.selects{
+    width: 100%;
+    height: 8rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/*Style for category and date drop downs*/
+.selects .category,#todo-app{
+    height: 100%;
+    display: inline-block;
+    width:47%;
+    margin-left: 2%;
+    height: 100%;
+}
+
+.selects .category{
+    border-right: 1px solid black;
+}
+
+.selects #todo-app input{
+    color: gray;
+    width: 25rem;
+}
+
+
+
+.heading{
+    font-size:1.5rem;
+    margin-left: 5%;
+    color: gray;
+}
+/*Height and width of category drop downs*/
+.category select{
+    font-size: 1.5rem;
+    color: gray;
+    height: 50%;
+    text-align: right;
+    width: 20rem;
+    margin-left: 2%;
+    border-style: none
+}
+.category select option{
+    background-color:lightgray;
+}
+
+
+/*Style common for all buttons*/
+.buttons{
+    height: 8rem;
+    width: 100%;
+}
+/*To display divs enclosing buttons inline-block*/
+.buttons .Tasks{
+    display: inline-block;
+    height: 100%;
+    width:49%;
+}
+#todo-app #date{
+    font-size: 1.5rem;
+    height: 90%;
+    margin-left:0%;
+    width: 95%;
+    border-style: none;
+
+}
+.Tasks button{
+    margin-top:3%;
+    width: 50%;
+    height: 70%;
+    color: white;
+    font-size: 1.5rem;
+    background-color: red;
+    border-style: none;
+}
+
+#add{
+margin-left: 50%;
+background-color: gray;
+
+}
+/*---------------------------------------------------------------------------------------------------*/
+/* Section which prints the tasks from the DB*/
+#availabe_tasks{
+    margin-top: 2%;
+    margin-left: -5%;
+    height: 400px;
+    width: 105%;
+;
+}
+/*remove default style of list*/
+#availabe_tasks ul{
+    overflow: hidden;
+    height: 100%;
+    list-style: none;
+    overflow-y: scroll;
+}
+/*To expand the list to the width of the form*/
+#availabe_tasks ul li{
+    width: 105%;
+    border-top: 1px solid gray;
+    line-height: 1rem;
+}
+
+
+#availabe_tasks #todo-list{
+    display: flex;
+    flex-wrap: wrap;
+    height: 7rem;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+
+}
+
+#todo-list div{
+    width:12rem;
+}
+#todo-list div{
+    color:grey;
+    font-size: 1.2rem;
+}
+
+
+#available_category{
+    margin-top: 20px;
+    color: white;
+    height: 3rem;
+    width: 7rem;
+    text-align: center;
+}
+
+#form2{
+    margin-top: -20%;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+/*For font awesome icons*/
+.fa-trash{
+    color: white;
+    font-size: 1.2rem;
+}
+.fa-plus{
+    color: white;
+    font-size: 1.2rem;
+}
+
+
+.fa-calendar-times{
+    font-size: 1.2rem;
+}
+
+/*-----------------Responsiveness-----------------------------*/
+
+@media only screen and (max-width:900px){
+    #id{
+        width: 100%;
+    }
+
+    .selects{
+        widows: 50%;
+    }
+
+    .selects .category{
+        width: 100%;;
+    }
+
+    #todo-app{
+        width: 100%;
+    }
+    #todo-app #date{
+        font-size: 1.5rem;
+        height: 90%;
+        margin-left:0%;
+        width: 100%;
+        border-style: none;
+        display: block;
+    }
+    .buttons{
+        display: flex;
+        margin-top: 30%;
+    }
+    .buttons .Tasks{
+        height: 100%;
+        width:50%;
+    }
+    .Tasks button{
+        margin-top:5%;
+        width: 100%;
+        height: 70%;
+        color: white;
+        font-size: 1.5rem;
+        background-color: red;
+        border-style: none;
+    }
+    
+    #add{
+    margin-left: 0%;
+    background-color: gray;
+    
+    }
+
+    #availabe_tasks ul li{
+        height: 70%;
+        width: 105%;
+        border-top: 1px solid gray;
+        line-height: 1rem;
+    }
+}
